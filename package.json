@@ -1,0 +1,22 @@
+{
+  "name": "expresscodeschool",
+  "version": "1.0.0",
+  "description": "code school practice lessons - express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrizzini/codeSchoolExpress.git"
+  },
+  "author": "Matt Rizzini",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrizzini/codeSchoolExpress/issues"
+  },
+  "homepage": "https://github.com/mrizzini/codeSchoolExpress#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
