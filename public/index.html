@@ -7,16 +7,22 @@
     <title>Code School Express</title>
 </head>
 <body>
-    <h1>Welcome to the Code School Cities Page</h1>
+    <h1>Welcome to the Code School Cities Bucket List Page</h1>
     
+    <h2>Fill out the form to add cities to your City Bucket List</h2>
     
-  <ul id='city-list'></ul>
-    
-    <form>
-        <select id="cityOptions">
-        
-        </select>
+    <form id="formSubmit">
+        <legend>New Bucket List City</legend>
+        <input name="city" placeholder="Enter city here"><br>
+        <input name="state" placeholder="Enter state here"><br>
+        <input type ="Submit">
     </form>
+
+    <ul id='city-list'>
+            <!--<select id="cityOptions">-->
+            <!--</select>-->
+    </ul>
+    
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
     <script src = "client.js"></script>
 </body>
