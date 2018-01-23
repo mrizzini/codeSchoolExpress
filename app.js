@@ -77,27 +77,31 @@ app.get('/cities', function (request, response){
 });
 
 app.post('/cities', parseUrlencoded, function(request, response){
-    if (request.body.city.length >= 4 && request.body.state.length >= 2) {
+    if (request.body.city.length >= 4 && request.body.state.length >= 2) { // checks if user input matches requirements
+    request.body.city = request.body.city[0].toUpperCase() + request.body.city.slice(1).toLowerCase(); //turns user input city into correct case
+    request.body.state = request.body.state[0].toUpperCase() + request.body.state.slice(1).toLowerCase(); // turns user input state into correct case
     var city = createCity(request.body.city, request.body.state);
     console.log("city is " + request.body.city);
     console.log("state is " + request.body.state);
     response.status(201).json(city);
     } else {
-        response.status(400).json('City must be at least 4 characters long and state must be at least 2');
+        response.status(400).json('City must be at least 4 characters long and state must be at least 2'); // else returns error
     }
     // var newCity = request.body;
     // cities[newCity.city] = newCity.state;
     // response.status(201).json(newCity.city);
 });
 
-var createCity = function(name, description){
-  cities[name] = description;
-  return name; 
+var createCity = function(city, state){
+    console.log("city in function is " + city + " state in function is " + state);
+    cities[city] = state;
+    console.log("function return " + city);
+    return city; 
 };
 
 app.delete('/cities/:name', function(request, response){
-   delete cities[request.cityName];
-   response.sendStatus(200);
+    delete cities[request.cityName];
+    response.sendStatus(200);
 });
 
 // app.get('/', function(request, response){
