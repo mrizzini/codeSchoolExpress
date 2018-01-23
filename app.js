@@ -6,19 +6,27 @@ app.use('/cities', cities); // mounts the router. this makes it so in cities.js 
 // app.get('/', function(request, response){
 //     response.send("Hello World"); 
 // });
-// app.get('/name', function(request, response){
-//     var name = "Matt Rizzini";
-//     response.send("Hello, my name is " + name);
-// });
-// app.get('/redirect', function(request, response){
-//     response.redirect(301, '/surprise');
-// });
-// app.get('/surprise', function(request, response){
-//     response.send("Surprise! You are now here instead of /redirect");
-// });
-// app.get('/date', function(request, response){
-//     response.send("Currently, it is " + new Date());
-// });
+
+app.route('/name')
+    .get(function(request, response){
+        var name = "Matt Rizzini";
+        response.send("Hello, my name is " + name);
+});
+
+app.route('/redirect')
+    .get(function(request, response){
+        response.redirect(301, '/surprise');
+});
+ 
+app.route('/surprise')
+    .get(function(request, response){
+        response.send("Surprise! You are now here instead of /redirect");
+});
+ 
+app.route('/date')
+    .get(function(request, response){
+        response.send("Currently, it is " + new Date());
+});
 
 // app.get('/', function(request, response){
 //   response.sendFile(__dirname + "/public/index.html");
