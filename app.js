@@ -1,8 +1,8 @@
 var express = require("express");
 var app = express();
-var cities = require('./routes/cities');
+var cities = require('./routes/cities'); //requires cities routes file and assign it to cities
 app.use('/cities', cities); // mounts the router. this makes it so in cities.js we dont need /cities 
-
+                            // mount cities routes in cities path. all requests to cities path are dispatched to this router
 // app.get('/', function(request, response){
 //     response.send("Hello World"); 
 // });
